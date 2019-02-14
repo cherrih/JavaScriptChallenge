@@ -1,2 +1,2 @@
 # JavaScriptChallenge
-Vanilla JS Coding Challenge
+Code for Wes Bos' Vanilla JS [Coding Challenge] (https://javascript30.com/)
