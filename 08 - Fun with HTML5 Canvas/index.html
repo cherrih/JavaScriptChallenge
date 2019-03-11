@@ -16,6 +16,7 @@
   // should end of line / end of corners be square or round
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
+  ctx.lineWidth = 100;
 
   let isDrawing = false;
   let lastX = 0;
@@ -27,11 +28,14 @@
     ctx.moveTo(lastX, lastY);
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
-
     [lastX, lastY] = [e.offsetX, e.offsetY];
   }
+  canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+  });
+
   canvas.addEventListener('mousemove', draw);
-  canvas.addEventListener('mousedown', () => isDrawing = true);
   canvas.addEventListener('mouseup', () => isDrawing = false);
   canvas.addEventListener('mouseleave', () => isDrawing = false);
 
